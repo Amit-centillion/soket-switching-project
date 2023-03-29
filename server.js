@@ -9,7 +9,9 @@ const PORT = process.env.PORT || 3000
 http.listen(PORT,()=>{
     console.log(`server is running on ${PORT}`)
 })
+ 
+app.use(express.static(__dirname + '/public'))
 
 app.get('/',(req,res)=>{
-    res.send('hellow world')
+    res.sendFile(__dirname + '/index.html')
 })
